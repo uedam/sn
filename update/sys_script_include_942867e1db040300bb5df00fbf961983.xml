@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_136303_book.getBookPrice</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>getBookPrice</name>
+        <script><![CDATA[var getBookPrice = Class.create();
+getBookPrice.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+	getPrice: function() {
+		var book = new GlideRecord("x_136303_book_book");
+		book.get(this.getParameter('sysparm_bookID'));
+		return book.price;
+	},
+	
+	type: 'getBookPrice'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-07-19 11:04:11</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>942867e1db040300bb5df00fbf961983</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>getBookPrice</sys_name>
+        <sys_package display_value="Book" source="x_136303_book">73bbfe2ddb800300bb5df00fbf961959</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Book">73bbfe2ddb800300bb5df00fbf961959</sys_scope>
+        <sys_update_name>sys_script_include_942867e1db040300bb5df00fbf961983</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-07-19 11:05:50</sys_updated_on>
+    </sys_script_include>
+</record_update>

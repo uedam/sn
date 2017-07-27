@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Order Item" max_length="40" name="x_136303_book_order_item" type="collection">
+        <element label="Book" mandatory="true" max_length="32" name="book" reference="x_136303_book_book" type="reference"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
+        <element label="Order" mandatory="true" max_length="32" name="order" reference="x_136303_book_order" type="reference"/>
+        <element label="Price" max_length="20" name="price" type="currency"/>
+        <element label="Qty" mandatory="true" max_length="40" name="qty" type="integer"/>
+        <index name="index">
+            <element name="book"/>
+        </index>
+        <index name="index2">
+            <element name="order"/>
+        </index>
+    </element>
+</database>

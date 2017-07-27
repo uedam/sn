@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script/>
+        <description/>
+        <direct>false</direct>
+        <endpoint>x_136303_book_angular_page.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.12/angular.js"></script>
+	<script src="x_136303_book.angjs.jsdbx"/>
+		<div ng-app="myApp" ng-controller="AppController" data-ng-init="initialize()">
+			<div>
+				<h1>登録フォーム</h1>
+				<form>
+					<div class="form-group">
+						<label for="username">ユーザー名</label>
+						<input type="text" class="form-control" id="username" placeholder="ユーザー名を入力" ng-model="username"/>
+					</div>
+					<button ng-click="submit()" class="btn btn-primary">登録</button>
+					<button ng-click="clear()" class="btn btn-primary">クリア</button>
+				</form>
+			</div>
+			<hr/>
+			<div>
+				<h1>ユーザー一覧</h1>
+				<ul>
+					<li style="padding: 5px" ng-repeat="user in users">
+					<div>
+						<a href="{{user.url}}" target="_blank">{{user.username}}</a>
+					</div>
+					</li>
+				</ul>
+			</div>
+			<hr/>
+			<div>
+				<h1>リスト</h1>
+				<ul>
+					<li style="padding: 5px" ng-repeat="book in books">
+						{{book.title}} / {{book.author}} / {{book.price}}
+					</li>
+				</ul>
+			</div>
+		</div>
+</j:jelly>]]></html>
+        <name>angular_page</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-07-24 02:39:46</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>b3a5e383db000300bb5df00fbf96196e</sys_id>
+        <sys_mod_count>15</sys_mod_count>
+        <sys_name>angular_page</sys_name>
+        <sys_package display_value="Book" source="x_136303_book">73bbfe2ddb800300bb5df00fbf961959</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Book">73bbfe2ddb800300bb5df00fbf961959</sys_scope>
+        <sys_update_name>sys_ui_page_b3a5e383db000300bb5df00fbf96196e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-07-25 10:48:38</sys_updated_on>
+    </sys_ui_page>
+</record_update>

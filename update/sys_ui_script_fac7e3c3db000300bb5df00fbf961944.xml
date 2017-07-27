@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_ui_script">
+    <sys_ui_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <global>false</global>
+        <name>x_136303_book.angjs</name>
+        <script><![CDATA[angular.module('myApp', []);
+angular.module('myApp')
+.controller('AppController', function($scope) {
+	// 入力されたユーザー名を保持
+	$scope.username = '';
+	// ユーザー一覧（空の配列で初期化）
+	$scope.users = [];
+	// 登録を押されたときの関数
+	$scope.submit = function() {
+		// 新しいユーザーをユーザー一覧に登録する
+		$scope.users.push({
+			username: $scope.username,
+			url: '//twitter.com/' + $scope.username
+		});
+		
+		// onclick handler
+		$scope.clear = function() {
+			console.log("*** clear ***");
+			$scope.users = [];
+		};
+	};
+	$scope.books = [];
+	// 初期化関数
+	$scope.initialize = function() {
+		// ここで初期化を行う
+		console.log("*** initialize ***");
+		var gr = new GlideRecord('x_136303_book_order_item');
+		gr.query();
+		while(gr.next()) {
+			var bk = new GlideRecord('x_136303_book_book');
+			bk.get(gr.book);
+			$scope.books.push({
+				title: bk.title,
+				author: bk.author,
+				price: gr.price
+			});
+		}
+		var user = new GlideRecord('sys_user');
+		user.query();
+		var i = 0;
+		while(user.next()) {
+			i++;
+			if (i > 10) break;
+			console.log('user:' + user.email);
+		}
+		//
+		var me = new GlideRecord('x_136303_marketing_marketing_event');
+		me.query();
+		console.log('==== marketing event =====');
+		while(me.next()) {
+			console.log('marketing event:' + me.name);
+		}
+	};
+});
+]]></script>
+        <script_name>angjs</script_name>
+        <sys_class_name>sys_ui_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-07-24 02:49:32</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>fac7e3c3db000300bb5df00fbf961944</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>x_136303_book.angjs</sys_name>
+        <sys_package display_value="Book" source="x_136303_book">73bbfe2ddb800300bb5df00fbf961959</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Book">73bbfe2ddb800300bb5df00fbf961959</sys_scope>
+        <sys_update_name>sys_ui_script_fac7e3c3db000300bb5df00fbf961944</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-07-25 10:39:01</sys_updated_on>
+        <use_scoped_format>false</use_scoped_format>
+    </sys_ui_script>
+</record_update>

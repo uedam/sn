@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Order" max_length="40" name="x_136303_book_order" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Email" max_length="40" name="email" type="string"/>
+        <element label="Name" mandatory="true" max_length="40" name="name" type="string"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" read_only="true" type="string"/>
+        <element label="Shipping Address" max_length="40" name="shipping_address" type="string"/>
+        <element label="Total Price" max_length="20" name="total_price" read_only="true" type="currency"/>
+        <element label="Zipcode" mandatory="true" max_length="40" name="zipcode" type="string"/>
+    </element>
+</database>
